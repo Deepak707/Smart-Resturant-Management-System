@@ -1,0 +1,284 @@
+{
+  "menuItems": [
+    {
+      "id": "1",
+      "name": "Pizza",
+      "price": 499,
+      "description": "Delicious cheese pizza with fresh toppings",
+      "image": "/src/assets/pizza.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Burger",
+      "price": 169,
+      "description": "Juicy beef burger with special sauce",
+      "image": "/src/assets/burger.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Salad",
+      "price": 180,
+      "description": "Fresh garden salad with mixed greens",
+      "image": "/src/assets/salad.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Pasta",
+      "price": 349,
+      "description": "Creamy pasta with herbs and parmesan",
+      "image": "/src/assets/pasta.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Sushi",
+      "price": 440,
+      "description": "Fresh sushi roll with premium fish",
+      "image": "/src/assets/sushi.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Chicken",
+      "price": 899,
+      "description": "Grilled Chicken with roasted vegetables",
+      "image": "/src/assets/chicken.jpg"
+    }
+  ],
+  "orders": [
+    {
+      "id": "e4d4",
+      "orderNumber": "ORDER-26836",
+      "tableNumber": "234",
+      "items": [
+        {
+          "id": "2",
+          "name": "Burger",
+          "price": 169,
+          "quantity": 2
+        },
+        {
+          "id": "3",
+          "name": "Salad",
+          "price": 180,
+          "quantity": 4
+        },
+        {
+          "id": "6",
+          "name": "Chicken",
+          "price": 899,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 1957,
+      "timestamp": "2024-12-29T13:08:31.013Z",
+      "status": "Ready"
+    },
+    {
+      "id": "1733",
+      "orderNumber": "ORDER-289312",
+      "tableNumber": "532",
+      "items": [
+        {
+          "id": "3",
+          "name": "Salad",
+          "price": 180,
+          "quantity": 10
+        },
+        {
+          "id": "6",
+          "name": "Chicken",
+          "price": 899,
+          "quantity": 2
+        },
+        {
+          "id": "2",
+          "name": "Burger",
+          "price": 169,
+          "quantity": 3
+        }
+      ],
+      "totalPrice": 4105,
+      "timestamp": "2024-12-29T13:12:54.253Z",
+      "status": "Ready"
+    },
+    {
+      "id": "c298",
+      "orderNumber": "ORDER-882527",
+      "tableNumber": "69",
+      "items": [
+        {
+          "id": "1",
+          "name": "Pizza",
+          "price": 499,
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "Burger",
+          "price": 169,
+          "quantity": 2
+        },
+        {
+          "id": "3",
+          "name": "Salad",
+          "price": 180,
+          "quantity": 3
+        },
+        {
+          "id": "5",
+          "name": "Sushi",
+          "price": 440,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 1817,
+      "timestamp": "2024-12-29T13:28:41.957Z",
+      "status": "Ready"
+    },
+    {
+      "id": "a9f7",
+      "orderNumber": "ORDER-823657",
+      "tableNumber": "435",
+      "items": [
+        {
+          "id": "2",
+          "name": "Burger",
+          "price": 169,
+          "quantity": 1
+        },
+        {
+          "id": "3",
+          "name": "Salad",
+          "price": 180,
+          "quantity": 2
+        },
+        {
+          "id": "1",
+          "name": "Pizza",
+          "price": 499,
+          "quantity": 2
+        },
+        {
+          "id": "4",
+          "name": "Pasta",
+          "price": 349,
+          "quantity": 1
+        },
+        {
+          "id": "5",
+          "name": "Sushi",
+          "price": 440,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 2316,
+      "timestamp": "2024-12-29T13:39:01.550Z",
+      "status": "Ready"
+    },
+    {
+      "id": "31b5",
+      "orderNumber": "ORDER-213269",
+      "tableNumber": "1",
+      "items": [
+        {
+          "id": "3",
+          "name": "Salad",
+          "price": 180,
+          "quantity": 3
+        },
+        {
+          "id": "2",
+          "name": "Burger",
+          "price": 169,
+          "quantity": 3
+        }
+      ],
+      "totalPrice": 1047,
+      "timestamp": "2024-12-29T13:40:16.533Z",
+      "status": "Ready"
+    },
+    {
+      "id": "c370",
+      "orderNumber": "ORDER-555244",
+      "tableNumber": "454",
+      "items": [
+        {
+          "id": "2",
+          "name": "Burger",
+          "price": 169,
+          "quantity": 4
+        },
+        {
+          "id": "1",
+          "name": "Pizza",
+          "price": 499,
+          "quantity": 4
+        },
+        {
+          "id": "4",
+          "name": "Pasta",
+          "price": 349,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 3021,
+      "timestamp": "2024-12-29T13:50:51.888Z",
+      "status": "cooking"
+    },
+    {
+      "id": "31d4",
+      "orderNumber": "ORDER-464180",
+      "tableNumber": "5234",
+      "items": [
+        {
+          "id": "3",
+          "name": "Salad",
+          "price": 180,
+          "quantity": 2
+        },
+        {
+          "id": "2",
+          "name": "Burger",
+          "price": 169,
+          "quantity": 1
+        },
+        {
+          "id": "4",
+          "name": "Pasta",
+          "price": 349,
+          "quantity": 2
+        }
+      ],
+      "totalPrice": 1227,
+      "timestamp": "2024-12-29T13:51:04.488Z",
+      "status": "Ready"
+    },
+    {
+      "id": "6138",
+      "orderNumber": "ORDER-10553",
+      "tableNumber": "1212",
+      "items": [
+        {
+          "id": "3",
+          "name": "Salad",
+          "price": 180,
+          "quantity": 3
+        },
+        {
+          "id": "2",
+          "name": "Burger",
+          "price": 169,
+          "quantity": 3
+        },
+        {
+          "id": "1",
+          "name": "Pizza",
+          "price": 499,
+          "quantity": 5
+        }
+      ],
+      "totalPrice": 3542,
+      "timestamp": "2024-12-29T17:56:04.957Z",
+      "status": "Ready"
+    }
+  ]
+}
