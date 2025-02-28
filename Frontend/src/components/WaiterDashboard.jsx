@@ -1,124 +1,133 @@
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import menuItem from '../../../Backend/api/menuItem';
+import { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
+import menuItem from "../../../Backend/api/menuItem";
+import { FiCheckCircle, FiClock, FiTable } from "react-icons/fi";
 
 function WaiterDashboard() {
   const [tables, setTables] = useState([
-    { number: 1, status: 'Available' },
-    { number: 2, status: 'Available' },
-    { number: 3, status: 'Available' },
-    // More tables
+    { number: 1, status: "Available" },
+    { number: 2, status: "Available" },
+    { number: 3, status: "Available" },
+    { number: 4, status: "Available" },
+    { number: 5, status: "Available" },
+    { number: 6, status: "Available" },
   ]);
 
-  const[pending, setPending]=useState([])
+  const [pending, setPending] = useState([]);
+  const lastFetchedOrders = useRef([]); // Store last fetched orders to prevent unnecessary updates
 
   const toggleTableStatus = (tableNumber) => {
-    setTables(tables.map(table => 
-      table.number === tableNumber
-        ? { 
-            ...table, 
-            status: table.status === 'Available' ? 'Occupied' : 'Available' 
-          }
-        : table
-    ));
+    setTables((prevTables) =>
+        prevTables.map((table) =>
+            table.number === tableNumber
+                ? {
+                  ...table,
+                  status: table.status === "Available" ? "Occupied" : "Available",
+                }
+                : table
+        )
+    );
   };
 
-  const readyOrder=async()=>{
-    try{
-      const response=await menuItem("/orders")
-      const redyorders=response.data.filter(order=>order.status=="Ready")
-      return redyorders
-    }
-    catch(error){
-      console.error("error in fetching the ready orders",error)
-      return[]
-    }
-  }
+  const fetchReadyOrders = async () => {
+    try {
+      const response = await menuItem.get("/orders", {
+        params: { status: "Ready" }, // Fetch only necessary data
+      });
 
-  // useEffect(()=>{
-  //   const read_orders=async()=>{
-  //     const allorders=await readyOrder()
-  //     if(allorders) setPending(allorders)
-  //   }
-  // read_orders()
-  // },[])
+      const sortedOrders = response.data
+          .filter((order) => order.status === "Ready")
+          .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp)); // Sort newest first
+
+      return sortedOrders;
+    } catch (error) {
+      console.error("Error fetching ready orders:", error);
+      return [];
+    }
+  };
 
   useEffect(() => {
-    const intervalId = setInterval(async () => {
-      const allOrders = await readyOrder();
-      if (allOrders.length > 0) {
-        setPending(prev => {
-          const newOrders = allOrders.filter(order => !prev.some(p => p.id === order.id));
-          return [...newOrders, ...prev];
-        });
+    const fetchOrdersFast = async () => {
+      const allOrders = await fetchReadyOrders();
+      if (
+          JSON.stringify(allOrders) !== JSON.stringify(lastFetchedOrders.current)
+      ) {
+        setPending(allOrders);
+        lastFetchedOrders.current = allOrders; // Store last fetched orders
       }
-    }, 10000);
+    };
+
+    fetchOrdersFast(); // Fetch immediately on mount
+
+    const intervalId = setInterval(fetchOrdersFast, 5000); // Faster updates (5 seconds)
 
     return () => clearInterval(intervalId);
   }, []);
 
   return (
-    <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="bg-gradient-to-r from-purple-100 to-purple-200 min-h-screen"
-    >
-      <div className="container mx-auto p-8">
-        <h1 className="text-4xl font-bold text-center mb-8">
-          Waiters Table Management
+      <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen p-6 flex flex-col items-center"
+      >
+        <h1 className="text-4xl font-extrabold text-center text-white mb-6">
+          🍽️ Waiter Dashboard
         </h1>
 
-        <div className="grid grid-cols-4 gap-6">
-          {tables.map(table => (
-            <motion.div 
-              key={table.number}
-              whileHover={{ scale: 1.05 }}
-              onClick={() => toggleTableStatus(table.number)}
-              className={`p-6 rounded-lg shadow-lg text-center cursor-pointer
-                ${table.status === 'Available' 
-                  ? 'bg-green-100 border-green-500' 
-                  : 'bg-red-100 border-red-500'
-                }`}
-            >
-              <h2 className="text-2xl font-bold mb-4">
-                Table {table.number}
-              </h2>
-              <div className={`text-lg font-semibold
-                ${table.status === 'Available' 
-                  ? 'text-green-700' 
-                  : 'text-red-700'
-                }`}>
-                {table.status}
-              </div>
-            </motion.div>
-          ))}
+        {/* Tables Management */}
+        <div className="w-full max-w-5xl bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
+          <h2 className="text-2xl font-bold text-yellow-400 flex items-center gap-2 mb-4">
+            <FiTable className="text-2xl" /> Manage Tables
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {tables.map((table) => (
+                <motion.div
+                    key={table.number}
+                    whileHover={{ scale: 1.05 }}
+                    onClick={() => toggleTableStatus(table.number)}
+                    className={`p-6 rounded-lg shadow-lg text-center cursor-pointer transition duration-200
+                ${
+                        table.status === "Available"
+                            ? "bg-green-600 text-white border border-green-400"
+                            : "bg-red-600 text-white border border-red-400"
+                    }`}
+                >
+                  <h2 className="text-xl font-bold">Table {table.number}</h2>
+                  <div className="text-lg font-semibold">{table.status}</div>
+                </motion.div>
+            ))}
+          </div>
         </div>
 
-        <motion.div 
-          whileHover={{ scale: 1.02 }}
-          className="mt-8 bg-white rounded-lg shadow-lg p-6"
-        >
-          <h2 className="text-2xl font-semibold mb-4">
-            Pending Order Notifications
+        {/* Ready Orders Notifications */}
+        <div className="mt-8 w-full max-w-5xl bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
+          <h2 className="text-2xl font-bold text-green-400 flex items-center gap-2 mb-4">
+            <FiCheckCircle className="text-2xl" /> Ready to Serve Orders
           </h2>
-          <div className="space-y-4">
-          {pending.length > 0 ? (
-          pending.map(item=>(
-            <div key={item.tableNumber} className="bg-blue-50 p-4 rounde d-lg">
-              <span>
-                Table {item.tableNumber} : {item.items.map(i=>`${i.quantity} ${i.name}`).join(", ")}
-                </span>
-            </div>
-            ))
-          ):(
-            <p>No pending orders at the moment.</p>
-          )}
-          </div>
-          
 
-        </motion.div>
-      </div>
-    </motion.div>
+          <div className="max-h-[300px] overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            {pending.length > 0 ? (
+                pending.map((item) => (
+                    <div
+                        key={item.id}
+                        className="bg-gray-700 p-4 rounded-lg mb-4 border border-gray-600"
+                    >
+                      <div className="flex justify-between text-white">
+                        <span className="font-medium">Table {item.tableNumber}</span>
+                        <FiClock className="text-yellow-400" />
+                      </div>
+                      <p className="text-gray-300">
+                        {item.items.map((i) => `${i.quantity}x ${i.name}`).join(", ")}
+                      </p>
+                    </div>
+                ))
+            ) : (
+                <p className="text-gray-400">No orders ready to serve at the moment.</p>
+            )}
+          </div>
+        </div>
+      </motion.div>
   );
 }
 

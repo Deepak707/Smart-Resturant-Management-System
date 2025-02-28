@@ -222,7 +222,7 @@
       ],
       "totalPrice": 3021,
       "timestamp": "2024-12-29T13:50:51.888Z",
-      "status": "cooking"
+      "status": "Ready"
     },
     {
       "id": "31d4",
@@ -278,6 +278,258 @@
       ],
       "totalPrice": 3542,
       "timestamp": "2024-12-29T17:56:04.957Z",
+      "status": "Ready"
+    },
+    {
+      "id": "4771",
+      "orderNumber": "ORDER-870087",
+      "tableNumber": "289",
+      "items": [
+        {
+          "id": "2",
+          "name": "Burger",
+          "price": 169,
+          "quantity": 2
+        },
+        {
+          "id": "3",
+          "name": "Salad",
+          "price": 180,
+          "quantity": 3
+        },
+        {
+          "id": "6",
+          "name": "Chicken",
+          "price": 899,
+          "quantity": 1
+        },
+        {
+          "id": "5",
+          "name": "Sushi",
+          "price": 440,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 2217,
+      "timestamp": "2024-12-30T16:51:27.901Z",
+      "status": "Ready"
+    },
+    {
+      "id": "00eb",
+      "orderNumber": "ORDER-775747",
+      "tableNumber": "99",
+      "items": [
+        {
+          "id": "2",
+          "name": "Burger",
+          "price": 169,
+          "quantity": 1
+        },
+        {
+          "id": "3",
+          "name": "Salad",
+          "price": 180,
+          "quantity": 3
+        },
+        {
+          "id": "4",
+          "name": "Pasta",
+          "price": 349,
+          "quantity": 2
+        }
+      ],
+      "totalPrice": 1407,
+      "timestamp": "2024-12-30T16:53:19.898Z",
+      "status": "Ready"
+    },
+    {
+      "id": "dc9b",
+      "orderNumber": "ORDER-688664",
+      "tableNumber": "3454",
+      "items": [
+        {
+          "id": "2",
+          "name": "Burger",
+          "price": 169,
+          "quantity": 1
+        },
+        {
+          "id": "3",
+          "name": "Salad",
+          "price": 180,
+          "quantity": 3
+        },
+        {
+          "id": "6",
+          "name": "Chicken",
+          "price": 899,
+          "quantity": 2
+        }
+      ],
+      "totalPrice": 2507,
+      "timestamp": "2024-12-30T16:54:10.582Z",
+      "status": "Ready"
+    },
+    {
+      "id": "aa49",
+      "orderNumber": "ORDER-807463",
+      "tableNumber": "534",
+      "items": [
+        {
+          "id": "2",
+          "name": "Burger",
+          "price": 169,
+          "quantity": 2
+        },
+        {
+          "id": "1",
+          "name": "Pizza",
+          "price": 499,
+          "quantity": 3
+        }
+      ],
+      "totalPrice": 1835,
+      "timestamp": "2024-12-30T16:54:18.186Z",
+      "status": "Ready"
+    },
+    {
+      "id": "fe05",
+      "orderNumber": "ORDER-294863",
+      "tableNumber": "55555",
+      "items": [
+        {
+          "id": "3",
+          "name": "Salad",
+          "price": 180,
+          "quantity": 4
+        },
+        {
+          "id": "6",
+          "name": "Chicken",
+          "price": 899,
+          "quantity": 2
+        }
+      ],
+      "totalPrice": 2518,
+      "timestamp": "2024-12-30T16:54:27.431Z",
+      "status": "Ready"
+    },
+    {
+      "id": "1124",
+      "orderNumber": "ORDER-693448",
+      "tableNumber": "34",
+      "items": [
+        {
+          "id": "2",
+          "name": "Burger",
+          "price": 169,
+          "quantity": 1
+        },
+        {
+          "id": "3",
+          "name": "Salad",
+          "price": 180,
+          "quantity": 3
+        },
+        {
+          "id": "6",
+          "name": "Chicken",
+          "price": 899,
+          "quantity": 3
+        }
+      ],
+      "totalPrice": 3406,
+      "timestamp": "2025-01-21T06:40:45.841Z",
+      "status": "Ready"
+    },
+    {
+      "id": "52de",
+      "orderNumber": "ORDER-736115",
+      "tableNumber": "88",
+      "items": [
+        {
+          "id": "3",
+          "name": "Salad",
+          "price": 180,
+          "quantity": 3
+        },
+        {
+          "id": "5",
+          "name": "Sushi",
+          "price": 440,
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "Burger",
+          "price": 169,
+          "quantity": 3
+        }
+      ],
+      "totalPrice": 1487,
+      "timestamp": "2025-02-28T20:22:04.695Z",
+      "status": "Ready"
+    },
+    {
+      "id": "6f09",
+      "orderNumber": "ORDER-535302",
+      "tableNumber": "12",
+      "items": [
+        {
+          "id": "5",
+          "name": "Sushi",
+          "price": 440,
+          "quantity": 1
+        },
+        {
+          "id": "6",
+          "name": "Chicken",
+          "price": 899,
+          "quantity": 3
+        },
+        {
+          "id": "3",
+          "name": "Salad",
+          "price": 180,
+          "quantity": 2
+        }
+      ],
+      "totalPrice": 3497,
+      "timestamp": "2025-02-28T20:27:36.911Z",
+      "status": "Ready"
+    },
+    {
+      "id": "1e9b",
+      "orderNumber": "ORDER-595039",
+      "tableNumber": "78",
+      "items": [
+        {
+          "id": "2",
+          "name": "Burger",
+          "price": 169,
+          "quantity": 3
+        },
+        {
+          "id": "5",
+          "name": "Sushi",
+          "price": 440,
+          "quantity": 2
+        },
+        {
+          "id": "6",
+          "name": "Chicken",
+          "price": 899,
+          "quantity": 4
+        },
+        {
+          "id": "3",
+          "name": "Salad",
+          "price": 180,
+          "quantity": 4
+        }
+      ],
+      "totalPrice": 5703,
+      "timestamp": "2025-02-28T20:43:13.239Z",
       "status": "Ready"
     }
   ]

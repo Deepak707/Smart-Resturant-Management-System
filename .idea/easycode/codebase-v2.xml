@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="com.obiscr.chatgpt.settings.EasyCodeState">
+    <option name="projectFiles" value="$PROJECT_DIR$/Backend/api/menuItem.js;C:/Resturant Management System/Backend/menuItems.json;C:/Resturant Management System/Backend/package-lock.json;C:/Resturant Management System/Backend/package.json;C:/Resturant Management System/Frontend/src/components/CookDashboard.jsx;C:/Resturant Management System/Frontend/src/components/CustomerDashboard.jsx;C:/Resturant Management System/Frontend/src/components/WaiterDashboard.jsx;C:/Resturant Management System/Frontend/src/App.css;C:/Resturant Management System/Frontend/src/App.jsx;C:/Resturant Management System/Frontend/src/index.css;C:/Resturant Management System/Frontend/src/main.jsx;C:/Resturant Management System/Frontend/eslint.config.js;C:/Resturant Management System/Frontend/index.html;C:/Resturant Management System/Frontend/package-lock.json;C:/Resturant Management System/Frontend/package.json;C:/Resturant Management System/Frontend/postcss.config.js;C:/Resturant Management System/Frontend/README.md;C:/Resturant Management System/Frontend/tailwind.config.js;C:/Resturant Management System/Frontend/vite.config.js" />
+  </component>
+</project>
