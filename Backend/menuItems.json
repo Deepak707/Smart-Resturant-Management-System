@@ -531,6 +531,34 @@
       "totalPrice": 5703,
       "timestamp": "2025-02-28T20:43:13.239Z",
       "status": "Ready"
+    },
+    {
+      "id": "5683",
+      "orderNumber": "ORDER-972386",
+      "tableNumber": "54",
+      "items": [
+        {
+          "id": "2",
+          "name": "Burger",
+          "price": 169,
+          "quantity": 4
+        },
+        {
+          "id": "4",
+          "name": "Pasta",
+          "price": 349,
+          "quantity": 3
+        },
+        {
+          "id": "3",
+          "name": "Salad",
+          "price": 180,
+          "quantity": 5
+        }
+      ],
+      "totalPrice": 2623,
+      "timestamp": "2025-03-01T11:34:13.906Z",
+      "status": "Ready"
     }
   ]
 }
