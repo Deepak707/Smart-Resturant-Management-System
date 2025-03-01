@@ -4,7 +4,7 @@ const Inventory = ({ loading }) => {
     // Dummy inventory data – replace with API data as needed
     const inventoryItems = [
         { id: 'I101', name: 'Burger Buns', stock: 100, unit: 'pcs' },
-        { id: 'I102', name: 'Beef Patty', stock: 50, unit: 'pcs' },
+        { id: 'I102', name: 'Chicken Patty', stock: 50, unit: 'pcs' },
         { id: 'I103', name: 'Lettuce', stock: 30, unit: 'kg' },
         { id: 'I104', name: 'Tomato', stock: 25, unit: 'kg' },
         { id: 'I105', name: 'Cheese Slices', stock: 200, unit: 'pcs' }
