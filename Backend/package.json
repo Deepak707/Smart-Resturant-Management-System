@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "json-server": "json-server -p 3006 -w menuItems.json",
+    "json-server": "npx json-server -p 3006 -w menuItems.json",
     "dev-all": "npx concurrently \"npm run dev\" \"npm run json-server\""
   },
   "keywords": [],
