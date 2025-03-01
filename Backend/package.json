@@ -6,7 +6,7 @@
     "start": "node server.js",
     "dev": "nodemon server.js",
     "json-server": "json-server -p 3006 -w menuItems.json",
-    "dev-all": "concurrently \"npm run dev\" \"npm run json-server\""
+    "dev-all": "npx concurrently \"npm run dev\" \"npm run json-server\""
   },
   "keywords": [],
   "author": "",
