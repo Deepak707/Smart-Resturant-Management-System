@@ -15,7 +15,7 @@ import CustomerDashboard from "./components/CustomerDashboard";
 import CookDashboard from "./components/CookDashboard";
 import WaiterDashboard from "./components/WaiterDashboard";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
+const API_BASE_URL = process.env.VITE_API_BASE_URL || "http://localhost:5000/api";
 
 function App() {
     const [orders, setOrders] = useState([]);
