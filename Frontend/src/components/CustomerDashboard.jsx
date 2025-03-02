@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 // import menuItemApi from '../../../Backend/menuItem.js';
 import axios from 'axios';
 
+
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
 
 
@@ -30,7 +31,12 @@ function CustomerDashboard() {
 
 
   const menuItems= async ()=>{
-    const response= await axios.get(`${API_BASE_URL}/menuItems`)
+    const response= await axios.get(`${API_BASE_URL}/menuItems`,{
+      headers: {
+        "Content-Type": "application/json"
+      },
+      withCredentials: true
+    })
     return response.data
   } 
 
@@ -117,7 +123,10 @@ function CustomerDashboard() {
     
 
     try {
-      const response = await axios.post(`${API_BASE_URL}/orders`, orderData);
+      const response = await axios.post(`${API_BASE_URL}/orders`, orderData,{
+        headers: { "Content-Type": "application/json" },
+        withCredentials: true
+      });
       if (response.status === 201) {
         setOrderNumber(newOrderNumber);
         setIsOrderPlaced(true);

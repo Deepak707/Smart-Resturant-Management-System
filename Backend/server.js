@@ -7,10 +7,22 @@ const jsonServer = require('json-server');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+const allowedOrigins = [
+    "https://rmswonderwave.netlify.app",
+    "http://localhost:5173"
+];
+
 app.use(cors({
-    origin: "https://rmswonderwave.netlify.app", // Replace with your actual Netlify frontend URL
+    origin:  function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
     methods: ["GET", "POST", "PATCH", "DELETE"],
-    allowedHeaders: ["Content-Type"]
+    allowedHeaders: ["Content-Type"],
+    credentials: true
 }));
 app.use(express.json());
 

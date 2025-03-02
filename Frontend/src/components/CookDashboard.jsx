@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import menuItem from "../../../Backend/menuItem.js";
+// import menuItem from "../../../Backend/menuItem.js";
 import { FiCheckCircle, FiClock, FiPlayCircle } from "react-icons/fi";
+import axios from 'axios';
+
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
+
 
 function CookDashboard() {
   const [orders, setOrders] = useState([]);
@@ -9,7 +14,12 @@ function CookDashboard() {
   // Fetch all orders from API
   const fetchOrders = async () => {
     try {
-      const response = await menuItem.get("/orders");
+      const response = await axios.get(`${API_BASE_URL}/orders`,{
+        headers: {
+          "Content-Type": "application/json"
+        },
+        withCredentials: true
+      });
       return response.data;
     } catch (error) {
       console.error("Error fetching orders:", error);
@@ -31,7 +41,10 @@ function CookDashboard() {
   // Update order status in API and state
   const updateOrderStatus = async (orderId, newStatus) => {
     try {
-      await menuItem.patch(`/orders/${orderId}`, { status: newStatus });
+      await axios.patch(`${API_BASE_URL}/orders/${orderId}`, { status: newStatus ,headers: {
+          "Content-Type": "application/json"
+        },
+        withCredentials: true});
 
       setOrders((prevOrders) =>
           prevOrders.map((order) =>

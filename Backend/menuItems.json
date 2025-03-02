@@ -715,6 +715,34 @@
       "timestamp": "2025-03-02T11:08:36.219Z",
       "status": "pending",
       "id": "iAajucy"
+    },
+    {
+      "orderNumber": "ORDER-334061",
+      "tableNumber": "23",
+      "items": [
+        {
+          "id": "2",
+          "name": "Burger",
+          "price": 169,
+          "quantity": 2
+        },
+        {
+          "id": "1",
+          "name": "Pizza",
+          "price": 499,
+          "quantity": 2
+        },
+        {
+          "id": "6",
+          "name": "Chicken",
+          "price": 899,
+          "quantity": 2
+        }
+      ],
+      "totalPrice": 3134,
+      "timestamp": "2025-03-02T13:23:42.798Z",
+      "status": "pending",
+      "id": "MwR2gKi"
     }
   ]
 }

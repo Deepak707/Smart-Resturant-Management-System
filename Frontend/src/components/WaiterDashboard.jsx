@@ -1,6 +1,11 @@
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
-import menuItem from "../../../Backend/menuItem.js";
+// import menuItem from "../../../Backend/menuItem.js";
+import axios from 'axios';
+
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
+
 import { FiCheckCircle, FiClock, FiTable } from "react-icons/fi";
 
 function WaiterDashboard() {
@@ -31,8 +36,12 @@ function WaiterDashboard() {
 
   const fetchReadyOrders = async () => {
     try {
-      const response = await menuItem.get("/orders", {
-        params: { status: "Ready" }, // Fetch only necessary data
+      const response = await axios.get(`${API_BASE_URL}/orders`, {
+        params: { status: "Ready" },
+        headers: {
+          "Content-Type": "application/json"
+        },
+        withCredentials: true
       });
 
       const sortedOrders = response.data
