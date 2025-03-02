@@ -15,7 +15,6 @@ const Reports = ({ orderData, loading }) => {
         );
     }
 
-    // Process order data for reports
     const processReportsData = () => {
         if (!orderData || orderData.length === 0) {
             return {
