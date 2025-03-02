@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import menuItemApi from '../../../Backend/menuItem.js';
+// import menuItemApi from '../../../Backend/menuItem.js';
+import axios from 'axios';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
 
 
 function CustomerDashboard() {
@@ -28,7 +30,7 @@ function CustomerDashboard() {
 
 
   const menuItems= async ()=>{
-    const response= await menuItemApi.get("/menuItems")
+    const response= await axios.get(`${API_BASE_URL}/menuItems`)
     return response.data
   } 
 
@@ -115,7 +117,7 @@ function CustomerDashboard() {
     
 
     try {
-      const response = await menuItemApi.post('/orders', orderData);
+      const response = await axios.post(`${API_BASE_URL}/orders`, orderData);
       if (response.status === 201) {
         setOrderNumber(newOrderNumber);
         setIsOrderPlaced(true);
