@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import menuItem from "../../../Backend/api/menuItem";
+import menuItem from "../../../Backend/menuItem.js";
 import { FiCheckCircle, FiClock, FiPlayCircle } from "react-icons/fi";
 
 function CookDashboard() {
