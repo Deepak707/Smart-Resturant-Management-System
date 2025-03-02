@@ -1,6 +1,8 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import dotenv from 'dotenv';
+dotenv.config();
 
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
@@ -13,21 +15,29 @@ import CustomerDashboard from "./components/CustomerDashboard";
 import CookDashboard from "./components/CookDashboard";
 import WaiterDashboard from "./components/WaiterDashboard";
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+
 function App() {
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/orders')
-            .then(res => res.json())
-            .then(data => {
+        const fetchOrders = async () => {
+            try {
+                const response = await fetch(`${API_BASE_URL}/orders`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const data = await response.json();
                 setOrders(data);
+            } catch (error) {
+                console.error("Error fetching orders:", error);
+            } finally {
                 setLoading(false);
-            })
-            .catch(err => {
-                console.error(err);
-                setLoading(false);
-            });
+            }
+        };
+
+        fetchOrders();
     }, []);
 
     return (
